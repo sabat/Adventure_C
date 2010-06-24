@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "misc.h"
 #ifdef __MSDOS__
 #include "alloc.h"
@@ -32,9 +35,8 @@ long ABBNUM, ACTSPK[36], AMBER, ATTACK, AXE, BACK, BATTER, BEAR, BIRD, BLOOD, BO
 		STREAM, TABNDX, TALLY, THRESH, THROW, TK[21], TRAVEL[886], TRIDNT,
 		TRNDEX, TRNLUZ, TRNSIZ = 5, TRNVAL[6], TRNVLS, TROLL, TROLL2, TRVS,
 		 TRVSIZ = 885, TTEXT[6], TURNS, URN, V1, V2, VASE, VEND, VERB,
-		VOLCAN, VRBSIZ = 35, VRSION = 25, WATER, WD1, WD1X, WD2, WD2X,
-		WZDARK = FALSE, ZZWORD;
-
+		VERBOSE=FALSE, VOLCAN, VRBSIZ = 35, VRSION = 25, WATER, WD1, WD1X, WD2,
+		WD2X, WZDARK = FALSE, ZZWORD; 
 extern initialise();
 extern void score(long);
 extern action(long);

@@ -1143,6 +1143,7 @@
 55	Y2
 56	CLIMB
 57	LOOK
+57	L
 57	EXAMI
 57	TOUCH
 57	DESCR
@@ -1330,6 +1331,7 @@
 2019	FIND
 2019	WHERE
 2020	INVEN
+2020	I
 2021	FEED
 2022	FILL
 2023	BLAST
@@ -1388,6 +1390,7 @@
 3246	WIZAR
 3271	YES
 3275	NEWS
+3280	VERBOSE
 -1
 5
 1	Set of keys
@@ -2080,6 +2083,7 @@
 275	game.  Saved games are now stored in much smaller files than before.
 276	You don't have to say "go" every time; just specify a direction or, if
 276	it's nearby, name the place to which you wish to move.
+277	Now operating at maximum verbosity.
 -1
 7
 1	3

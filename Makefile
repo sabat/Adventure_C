@@ -5,10 +5,15 @@
 OBJS=main.o init.o actions1.o actions2.o score.o misc.o datime.o
 
 .c.o:
-	gcc -O $(DBX) -c $<
+	gcc -g $(DBX) -c $<
 
 adventure:	$(OBJS)
-	gcc -O $(DBX) -o adventure $(OBJS)
+	gcc -g $(DBX) -o adventure $(OBJS)
+
+all:	adventure
+
+clean:
+	rm -f *.o adventure
 
 main.o:		misc.h funcs.h
 
