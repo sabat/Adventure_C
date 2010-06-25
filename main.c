@@ -392,6 +392,7 @@ L2625:	if(WD1 != MAKEWD( 715) || WD2 == 0) goto L2630;
 	IGO=IGO+1;
 	if(IGO == 10)RSPEAK(276);
 L2630:	I=VOCAB(WD1,-1);
+/* sabat */
 	if(I == -1) goto L3000;
 	K=MOD(I,1000);
 	KQ=I/1000+1;
