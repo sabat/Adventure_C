@@ -63,6 +63,7 @@ L9015:	SPK=238;
 discard(just_do_it)long just_do_it; {
 	if(just_do_it) goto L9021;
 	if(TOTING(ROD2) && OBJ == ROD && !TOTING(ROD))OBJ=ROD2;
+	if(!TOTING(OBJ)) printf("You are not toting obj %i\n", OBJ); /* sabat */
 	if(!TOTING(OBJ)) return(2011);
 	if(OBJ != BIRD || !HERE(SNAKE)) goto L9023;
 	RSPEAK(30);

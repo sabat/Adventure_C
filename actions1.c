@@ -54,7 +54,8 @@ L4080:	switch (VERB-1) { case 0: goto L8010; case 1: return(8000); case 2:
 
 /*  ANALYSE A TRANSITIVE VERB. */
 
-L4090:	switch (VERB-1) { case 0: goto L9010; case 1: goto L9020; case 2: goto
+L4090:	switch (VERB-1) {
+                case 0: goto L9010; case 1: goto L9020; case 2: goto
 		L9030; case 3: goto L9040; case 4: return(2009); case 5: goto L9040;
 		case 6: goto L9070; case 7: goto L9080; case 8: goto L9090; case
 		9: return(2011); case 10: return(2011); case 11: goto L9120; case 12:
@@ -80,6 +81,7 @@ L4090:	switch (VERB-1) { case 0: goto L9010; case 1: goto L9020; case 2: goto
 
 L5000:	OBJ=K;
 	if(!HERE(K)) goto L5100;
+printf("OBJ = %i\n", OBJ);
 L5010:	if(WD2 > 0) return(2800);
 	if(VERB != 0) goto L4090;
 	SETPRM(1,WD1,WD1X);
@@ -106,10 +108,33 @@ L5140:	if(OBJ != ROD || !HERE(ROD2)) goto L5190;
 	OBJ=ROD2;
 	 goto L5010;
 L5190:	if((VERB == FIND || VERB == INVENT) && WD2 <= 0) goto L5010;
+	if((VERB == 1 || VERB == 2) && OBJ == 70) goto L5193;
 	SETPRM(1,WD1,WD1X);
 	RSPEAK(256);
-	 return(2012);
-
+	if (VERB != 1 || (VERB == 1 && OBJ != 70)) return(2012);
+/* sabat TAKE ALL or DROP ALL*/
+L5193:	if (VERB == 2) goto L5197;
+L5194:	I = ATLOC[LOC];
+L5195:	if (I == 0) return(2012);
+        PSPEAK(I, -1);
+	OBJ = I;
+	printf("Taking: ");
+	carry();
+	I = LINK[I];
+	goto L5195;
+L5197:	for (I=1; I<=100; I++) {
+	if(I == BEAR || !TOTING(I)) goto L5198;
+	BLKLIN=FALSE;
+        printf("Dropping: ");
+	PSPEAK(I,-1);
+	OBJ = I;
+        discard(FALSE);
+	BLKLIN=TRUE;
+	SPK=0;
+L5198:	/*etc*/ ;
+	} /* end loop */
+	if(TOTING(BEAR))SPK=141;
+	return(2012);
 
 
 

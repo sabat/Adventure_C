@@ -335,6 +335,7 @@ long I, L, MAKEWD;
  *  KLUDGEY WORKAROUND, YOU CAN INCREMENT A LETTER BY 5 BY ADDING 50 TO
  *  THE NEXT PAIR OF DIGITS. */
 
+/* sabat : decrypt this in order to figure out what number represents "ALL" */
 
 	MAKEWD=0;
 	I=1;
