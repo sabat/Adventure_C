@@ -310,11 +310,8 @@ L2004:	if(I == 0) goto L2012;
  *  ELSE ANYWAY (SO GOES THE RATIONALISATION). */
 L2006:	KK=PROP[OBJ];
 	if(OBJ == STEPS && LOC == FIXED[STEPS])KK=1;
-/* sabat */
-printf("there is a %i here\n", I);
 	PSPEAK(OBJ,KK);
 L2008:	I=LINK[I];
-printf("I is now = %i\n", I);
 	 goto L2004;
 
 L2009:	K=54;
@@ -381,9 +378,6 @@ L19999: K=43;
 	if(LIQLOC(LOC) == WATER)K=70;
 	V1=VOCAB(WD1,-1);
 	V2=VOCAB(WD2,-1);
-/* sabat */
-printf("V1 = %i\n", V1);
-printf("V2 = %i\n", V2);
 	if(V1 == ENTER && (V2 == STREAM || V2 == 1000+WATER)) goto L2010;
 	if(V1 == ENTER && WD2 > 0) goto L2800;
 	if((V1 != 1000+WATER && V1 != 1000+OIL) || (V2 != 1000+PLANT && V2 !=
@@ -398,8 +392,6 @@ L2625:	if(WD1 != MAKEWD( 715) || WD2 == 0) goto L2630;
 	IGO=IGO+1;
 	if(IGO == 10)RSPEAK(276);
 L2630:	I=VOCAB(WD1,-1);
-/* sabat */
-printf("I = %i\n", I);
 	if(I == -1) goto L3000;
 	K=MOD(I,1000);
 	KQ=I/1000+1;

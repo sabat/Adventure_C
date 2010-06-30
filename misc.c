@@ -335,8 +335,6 @@ long I, L, MAKEWD;
  *  KLUDGEY WORKAROUND, YOU CAN INCREMENT A LETTER BY 5 BY ADDING 50 TO
  *  THE NEXT PAIR OF DIGITS. */
 
-/* sabat : decrypt this in order to figure out what number represents "ALL" */
-
 	MAKEWD=0;
 	I=1;
 	L=LETTRS;
@@ -892,7 +890,7 @@ long I, VAL; static FILE *OPENED = NULL;
 	if(FIL) goto L15;
 	printf("> ");
 	fgets(INLINE+1,100,stdin);
-	printf("\n");
+	/* printf("\n"); */
 	if(feof(stdin)) score(1);
 	 goto L20;
 
@@ -941,7 +939,8 @@ L10:	if(MAP2[1] == 0)MPINIT();
 L20:	{long x = VAL+1; INLINE[I]=MAP2[x];}
 	} /* end loop */
 	{long x = LNLENG+1; INLINE[x]=0;}
-	printf("%s\n",INLINE+1);
+	printf("%s",INLINE+1);
+        printf("\n");
 	return;
 }
 

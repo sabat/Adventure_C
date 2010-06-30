@@ -6,6 +6,8 @@
 #define WRITE_MODE "w"
 #endif
 
+long no_lf;
+
 extern void fSPEAK(long);
 #define SPEAK(N) fSPEAK(N)
 extern void fPSPEAK(long,long);

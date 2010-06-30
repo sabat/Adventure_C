@@ -81,7 +81,6 @@ L4090:	switch (VERB-1) {
 
 L5000:	OBJ=K;
 	if(!HERE(K)) goto L5100;
-printf("OBJ = %i\n", OBJ);
 L5010:	if(WD2 > 0) return(2800);
 	if(VERB != 0) goto L4090;
 	SETPRM(1,WD1,WD1X);
@@ -112,21 +111,17 @@ L5190:	if((VERB == FIND || VERB == INVENT) && WD2 <= 0) goto L5010;
 	SETPRM(1,WD1,WD1X);
 	RSPEAK(256);
 	if (VERB != 1 || (VERB == 1 && OBJ != 70)) return(2012);
-/* sabat TAKE ALL or DROP ALL*/
+	/* TAKE ALL or DROP ALL */
 L5193:	if (VERB == 2) goto L5197;
 L5194:	I = ATLOC[LOC];
 L5195:	if (I == 0) return(2012);
-        PSPEAK(I, -1);
 	OBJ = I;
-	printf("Taking: ");
 	carry();
 	I = LINK[I];
 	goto L5195;
 L5197:	for (I=1; I<=100; I++) {
 	if(I == BEAR || !TOTING(I)) goto L5198;
 	BLKLIN=FALSE;
-        printf("Dropping: ");
-	PSPEAK(I,-1);
 	OBJ = I;
         discard(FALSE);
 	BLKLIN=TRUE;

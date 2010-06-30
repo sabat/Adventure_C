@@ -44,9 +44,11 @@ L9017:	SPK=92;
 L9014:	if((OBJ == BIRD || OBJ == CAGE) && (PROP[BIRD] == 1 || -1-PROP[BIRD] ==
 		1))CARRY(BIRD+CAGE-OBJ,LOC);
 	CARRY(OBJ,LOC);
+	printf("Taking: ");
+	PSPEAK(OBJ, -1);
 	K=LIQ(0);
 	if(OBJ == BOTTLE && K != 0)PLACE[K]= -1;
-	if(!GSTONE(OBJ) || PROP[OBJ] == 0) return(2009);
+	if(!GSTONE(OBJ) || PROP[OBJ] == 0) return(2012);
 	PROP[OBJ]=0;
 	PROP[CAVITY]=1;
 	 return(2009);
@@ -63,7 +65,6 @@ L9015:	SPK=238;
 discard(just_do_it)long just_do_it; {
 	if(just_do_it) goto L9021;
 	if(TOTING(ROD2) && OBJ == ROD && !TOTING(ROD))OBJ=ROD2;
-	if(!TOTING(OBJ)) printf("You are not toting obj %i\n", OBJ); /* sabat */
 	if(!TOTING(OBJ)) return(2011);
 	if(OBJ != BIRD || !HERE(SNAKE)) goto L9023;
 	RSPEAK(30);
@@ -121,7 +122,10 @@ L9026:	if(OBJ != BEAR || !AT(TROLL)) goto L9027;
 	 goto L9021;
 
 L9027:	if(OBJ == VASE && LOC != PLAC[PILLOW]) goto L9028;
-	RSPEAK(54);
+        /* OKOK */
+	/* RSPEAK(54); */
+	printf("Dropping: ");
+	PSPEAK(OBJ, -1);
 	 goto L9021;
 
 L9028:	PROP[VASE]=2;
