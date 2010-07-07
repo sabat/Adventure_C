@@ -94,6 +94,7 @@ L380:	SHFTXT(LNPOSN+2,-2);
 	if(PRMTYP == 31)CASE=1;
 	if(PRMTYP == 33)CASE=0;
 	I=LNPOSN;
+printf("Parms nparms = %i\n", PARMS[NPARMS]);
 	PUTTXT(PARMS[NPARMS],STATE,CASE,0);
 	{long x = NPARMS+1; PUTTXT(PARMS[x],STATE,CASE,0);}
 	if(PRMTYP == 13 && INLINE[I] >= 37 && INLINE[I] <=

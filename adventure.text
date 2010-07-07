@@ -1273,6 +1273,9 @@
 1069	EBONY
 1069	STATU
 1070	ALL
+1070	EVERY
+1071	IT
+1071	THEM
 2001	CARRY
 2001	TAKE
 2001	KEEP
@@ -1363,6 +1366,7 @@
 2033	LISTE
 2034	Z'ZZZ	(GETS REPLACED)
 2035	VERBOSE
+2036	AGAIN
 3001	FEE
 3002	FIE
 3003	FOE
@@ -1727,7 +1731,7 @@
 51	what got you here.  Good luck, and have fun!
 52	There is no way to go that direction.
 53	Please stick to 1- and 2-word commands.
-54	OK!
+54	OK
 55	You can't unlock the keys.
 56	You have crawled around in some little holes and wound up back in the
 56	main passage.
@@ -2086,6 +2090,9 @@
 276	You don't have to say "go" every time; just specify a direction or, if
 276	it's nearby, name the place to which you wish to move.
 277	Now operating at maximum verbosity.
+278	I'm not really sure which thing you're referring to. Try being a
+278	bit more specific.
+279	What do you want to do again?
 -1
 7
 1	3

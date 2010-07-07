@@ -80,6 +80,13 @@ L4090:	switch (VERB-1) {
  *  THE BOTTLE OR URN OR AS A FEATURE OF THE LOCATION. */
 
 L5000:	OBJ=K;
+	if (OBJ == 71 && IT != -1) {
+	  OBJ = K = IT;
+	  WD1 = IT_WD1;
+        } else if (OBJ != 71) {
+	  IT = OBJ;
+	  IT_WD1 = WD1;
+	}
 	if(!HERE(K)) goto L5100;
 L5010:	if(WD2 > 0) return(2800);
 	if(VERB != 0) goto L4090;
