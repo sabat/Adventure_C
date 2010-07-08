@@ -26,7 +26,6 @@ L10:	L=IABS(LINES[K])-1;
 	LNPOSN=1;
 	STATE=0;
 	/* 20 */ for (I=K; I<=L; I++) {
-/* printf("WORD %i\n", I); */
 L20:	PUTTXT(LINES[I],STATE,2,I);
 	} /* end loop */
 	LNPOSN=0;
@@ -1007,6 +1006,8 @@ L10:	fclose(F);
 
 L20:	printf("\nFile name: ");
 	fgets(NAME,49,stdin);
+	int flen = strlen(NAME) - 1;
+	NAME[flen] = NULL;
 	F=fopen(NAME,(IN ? READ_MODE : WRITE_MODE));
 	if(F == NULL) {printf("Can't open file, try again.\n"); goto L20;}
 	return;
