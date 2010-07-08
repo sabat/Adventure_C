@@ -257,6 +257,7 @@ L1010:	if(LOC > 0 && LOC <= 100)PTEXT[LOC]=LINUSE;
 
 L1011:	if(LOC > RTXSIZ)BUG(6);
 	RTEXT[LOC]=LINUSE;
+/* printf("rtext[loc]: loc = %i, linuse = %i\n", LOC, LINUSE); */
 	 goto L1005;
 
 L1012:	CLSSES=CLSSES+1;
