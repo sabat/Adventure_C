@@ -89,6 +89,7 @@ L5000:	OBJ=K;
 	  IT = OBJ;
 	  IT_WD1 = WD1;
 	}
+/* printf("IT = %i, IT_WD1 = %i\n", IT, IT_WD1); */
 	if(!HERE(K)) goto L5100;
 L5010:	if(WD2 > 0) return(2800);
 	if(VERB != 0) goto L4090;

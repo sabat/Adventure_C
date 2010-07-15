@@ -172,13 +172,13 @@ static quick_io(void);
 static report(void);
 
 initialise() {
-	printf("Initialising...\n");
+	/* printf("Initialising...\n"); */
 	if(!quick_init()){raw_init(); report(); quick_save();}
 	finish_init();
 }
 
 static raw_init() {
-	printf("Couldn't find adventure.data, using adventure.text...\n");
+	/* printf("Couldn't find adventure.data, using adventure.text...\n"); */
 
 /*  CLEAR OUT THE VARIOUS TEXT-POINTER ARRAYS.  ALL TEXT IS STORED IN ARRAY
  *  LINES; EACH LINE IS PRECEDED BY A WORD POINTING TO THE NEXT POINTER (I.E.
@@ -630,8 +630,8 @@ L1993:	SETPRM(1,LINUSE,LINSIZ);
 	SETPRM(15,CLSSES,CLSMAX);
 	SETPRM(17,HNTMAX,HNTSIZ);
 	SETPRM(19,TRNVLS,TRNSIZ);
-	RSPEAK(267);
-	TYPE0();
+	/* RSPEAK(267);
+	TYPE0(); */
 }
 
 static long init_reading, init_cksum;
@@ -661,7 +661,7 @@ static quick_init() {
 }
 
 static quick_save() {
-	printf("Writing adventure.data...\n");
+	/* printf("Writing adventure.data...\n"); */
 	f = fopen("adventure.data",WRITE_MODE);
 	if(f == NULL){printf("Can't open file!\n"); return(0);}
 	init_reading = FALSE;
