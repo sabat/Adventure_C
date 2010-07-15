@@ -2,6 +2,7 @@
 #include "misc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #define TRUE  (0==0)
 #define FALSE (0!=0)
@@ -1007,7 +1008,7 @@ L10:	fclose(F);
 L20:	printf("\nFile name: ");
 	fgets(NAME,49,stdin);
 	int flen = strlen(NAME) - 1;
-	NAME[flen] = NULL;
+	NAME[flen] = (char) NULL;
 	F=fopen(NAME,(IN ? READ_MODE : WRITE_MODE));
 	if(F == NULL) {printf("Can't open file, try again.\n"); goto L20;}
 	return;

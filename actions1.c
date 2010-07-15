@@ -3,6 +3,7 @@
 #include "share.h"
 #include "funcs.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #define NO_SAVE_PENALTY
 
